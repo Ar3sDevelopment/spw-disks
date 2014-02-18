@@ -5,7 +5,7 @@ exports.data = function(cb) {
 		disks : []
 	};
 
-	exec("df -h -T -x tmpfs -x devtmpfs -x rootfs -x fuse -x cifs", function(err, stdout, stderr) {
+	exec("df -h -T -x tmpfs -x devtmpfs -x rootfs -x fuse -x cifs", function(err, stdout) {
 		if (!err) {
 			var diskfree = stdout.split(/[\r\n]{1,2}/);
 			delete diskfree[0];
@@ -37,4 +37,4 @@ exports.manage_post = function(post, cb) {
 
 exports.columns = 6;
 exports.title = "Disks Info";
-exports.updatetime = 1000;
+exports.updatetime = 60 * 1000;
