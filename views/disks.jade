@@ -64,5 +64,5 @@ script(type="text/javascript").
 	}
 
 	function updateDiskGrid() {
-		$.startUpdatingWidgetJson(socket, #{user_widget.id}, '#{sid}', callbackUpdateDiskGrid, null);
+		$.startUpdatingWidgetJson(socket, #{user_widget.id}, '#{username}', callbackUpdateDiskGrid, null);
 	}
